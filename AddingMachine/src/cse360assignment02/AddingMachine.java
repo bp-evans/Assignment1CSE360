@@ -8,6 +8,7 @@ package cse360assignment02;
  */
 public class AddingMachine {
 	private int total;
+	private String record;
 	
 	/**
 	 * The AddingMachine constructor
@@ -15,6 +16,7 @@ public class AddingMachine {
 	 */
 	public AddingMachine () {
 	    total = 0;  // not needed - included for clarity
+	    record = "0";
 	}
 	
 	/**
@@ -22,33 +24,39 @@ public class AddingMachine {
 	 * @return
 	 */
 	public int getTotal () {
-	    return 0;
+	    return total;
 	}
 	
 	/**
-	 * Method to add values
+	 * Method to add values, adds to transaction record
 	 * @param value - an integer value for addition
 	 */
 	public void add (int value) {
+		total = total + value;
+		record = record + " + " + value;
 	}
 	
 	/**
-	 * Method to subtract values
+	 * Method to subtract values, adds to transaction record
 	 * @param value - an integer value for subtraction
 	 */
 	public void subtract (int value) {
+		total = total - value;
+		record = record + " - " + value; 
 	}
 	
 	/**
-	 * Method to create string with key data from class
+	 * Method to return record of transaction string
 	 */
 	public String toString () {
-		return "";
+		return record;
 	}
 	
 	/**
 	 * Method to clear the class
 	 */
 	public void clear() {
+		total = 0;
+		record = "0";
 	}
 }
